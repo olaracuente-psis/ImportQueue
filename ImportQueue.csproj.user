@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>ccms_to_hub_biztalk.csv CJISBIZDEV\Private%24\ccms_to_hub_biztalk</StartArguments>
+  </PropertyGroup>
+</Project>
