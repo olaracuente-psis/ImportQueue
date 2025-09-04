@@ -146,13 +146,13 @@ namespace ImportQueue
                 // Simple CSV parser - splits by comma but handles quoted values
                 string[] fields = ParseCSVLine(csvLine);
 
-                // Updated CSV format from ExportQueue (MessageId is now first):
-                // MessageId,QueueName,CorrelationId,Label,Body,Priority,
+                // Expected CSV format from ExportQueue:
+                // QueueName,MessageId,CorrelationId,Label,Body,Priority,
                 // Recoverable,AppSpecific,SentTime,ArrivedTime,
                 // TimeToReachQueue,TimeToBeReceived,UseJournalQueue,UseDeadLetterQueue,
-                // ExportedAt,OriginalBodyType,MessageSize
+                // ImportedAt,OriginalBodyType,MessageSize
 
-                if (fields.Length < 5) // At minimum we need MessageId, QueueName, CorrelationId, Label, Body
+                if (fields.Length < 5) // At minimum we need QueueName, MessageId, CorrelationId, Label, Body
                 {
                     Console.WriteLine($"Skipping line - insufficient fields: {fields.Length}");
                     return null;
